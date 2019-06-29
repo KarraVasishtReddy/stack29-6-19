@@ -1,0 +1,62 @@
+#include<stdio.h>
+#define size 5
+int a[size],top=-1;
+void push();
+void pop();
+void display();
+void main()
+{
+    int n;
+    for(n=1;n>0;n)
+    {
+     printf("\n choose function you want to carry\n1.insert\n2.delete\n3.display\n4.exit\n");
+     scanf("%d",&n);
+     switch(n)
+     {
+     case 1:push();break;
+     case 2:pop();break;
+     case 3:display();break;
+     case 4:exit(0);break;
+     default:printf("\nwrong choice");
+     }  
+    }
+}
+
+void push()
+{
+    int val;
+    if(top==size-1)
+     {
+         printf("\nstack is full");
+         
+     }
+     else
+     {
+         printf("\n enter element to push");
+         scanf("%d",&val);
+         top=top+1;
+         a[top]=val;
+         
+     }
+}
+void pop()
+{
+    
+    if(top==-1)
+     {
+         printf("\nstack is empty");
+         
+     }
+     else
+     {
+         printf("\nelement that is  going to be deleted is %d",a[top]);
+         top=top-1;
+     }
+}
+void display()
+{
+    int i=0;
+    printf(" elements are:");
+    for(i=0;i<top;i++)
+    printf("%3d",a[i]);
+}
